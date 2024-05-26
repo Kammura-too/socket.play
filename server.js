@@ -8,6 +8,8 @@ const io = socketIo(server);
 
 const port = process.env.PORT || 8080;
 
+console.log(`Starting server on port ${port}`);  // Add this line
+
 io.on('connection', (socket) => {
     console.log('a user connected');
     socket.on('disconnect', () => {
@@ -23,4 +25,3 @@ io.on('connection', (socket) => {
 server.listen(port, '0.0.0.0', () => {
     console.log(`Server is running on http://0.0.0.0:${port}`);
 });
-
